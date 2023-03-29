@@ -17,22 +17,13 @@ const HomePage: FC<HomePageProps> = ({ coffeeList }) => {
 }
 
 export async function getServerSideProps() {
+    const response = await fetch(`${process.env.COFFEE_SERVER_URL}/coffeeList`);
+
+    const coffeeList = await response.json();
 
     return {
         props: {
-            coffeeList: [
-                {
-                    name: "Espresso",
-                    color: 'black',
-                    cost: 3
-                },
-                {
-                    name: "Latte",
-                    color: 'brown',
-                    hasMilk: true,
-                    cost: 3
-                }
-            ]
+            coffeeList
         }
     }
 }
