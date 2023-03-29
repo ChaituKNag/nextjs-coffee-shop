@@ -9,11 +9,14 @@ const HomePage: FC<HomePageProps> = ({ coffeeList }) => {
         return null;
     }
 
-    return <ul>
-        {coffeeList.map(coffee => (
-            <li key={coffee.name}><Link href={`/coffee/${coffee.name}`}>{coffee.name}</Link></li>
-        ))}
-    </ul>
+    return <div>
+        <h2>All coffee options</h2>
+        <ul>
+            {coffeeList.map(coffee => (
+                <li key={coffee.name}><Link href={`/coffee/${coffee.name}`}>{coffee.name}</Link></li>
+            ))}
+        </ul>
+    </div>
 }
 
 export async function getServerSideProps() {

@@ -1,13 +1,18 @@
 import { GetServerSideProps } from 'next'
 import { FC } from 'react';
 import { CoffeeDetailsProps } from '../../interfaces';
+import { useRouter } from 'next/router';
 
 
 
 const CoffeeDetails: FC<CoffeeDetailsProps> = ({ coffeeDetails }) => {
-    console.log(coffeeDetails);
+    
+    const router = useRouter();
+
     return <div>
-        Coffee details: {coffeeDetails.name}
+        <h2>Coffee details: {coffeeDetails.name}</h2>
+
+        <button onClick={() => router.push('/checkout')}>Checkout</button>
     </div>
 }
 
