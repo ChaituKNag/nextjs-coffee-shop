@@ -1,21 +1,32 @@
 {
-    "coffeeList": [
-        {
-            "name": "Espresso",
-            "color": "black",
-            "cost": 3
-        },
-        {
-            "name": "Latte",
-            "color": "brown",
-            "hasMilk": true,
-            "cost": 3
-        },
-        {
-            "name": "Cappuccino",
-            "color": "light brown",
-            "hasMilk": true,
-            "cost": 4
-        }
-    ]
+  "coffeeList": [
+    {
+      "name": "Espresso",
+      "color": "black",
+      "cost": 3
+    },
+    {
+      "name": "Latte",
+      "color": "brown",
+      "hasMilk": true,
+      "cost": 3
+    },
+    {
+      "name": "Cappuccino",
+      "color": "light brown",
+      "hasMilk": true,
+      "cost": 4
+    }
+  ],
+  "coffeeCart": [
+    {
+      "name": "Espresso",
+      "id": 1
+    },
+    {
+      "name": "Cappuccino",
+      "id": 3
+    }
+  ],
+  "coffeeHistory": []
 }

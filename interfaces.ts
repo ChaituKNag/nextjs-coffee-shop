@@ -12,4 +12,12 @@ export interface HomePageProps {
 
 export interface CoffeeDetailsProps {
     coffeeDetails: Coffee;
+    addedToCart: boolean;
+}
+
+export interface CoffeeCheckoutProps {
+    cartDetails: {
+        name: string;
+        id: number
+    }[]
 }
