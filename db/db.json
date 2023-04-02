@@ -18,15 +18,53 @@
       "cost": 4
     }
   ],
-  "coffeeCart": [
+  "coffeeCart": [],
+  "coffeeHistory": [
     {
-      "name": "Espresso",
+      "cart": [
+        {
+          "name": "Espresso",
+          "cost": 3,
+          "id": 1
+        },
+        {
+          "name": "Latte",
+          "cost": 3,
+          "id": 2
+        }
+      ],
+      "total": 6,
+      "date": "2023-04-02T11:11:31.596Z",
       "id": 1
     },
     {
-      "name": "Cappuccino",
+      "cart": [
+        {
+          "name": "Espresso",
+          "cost": 3,
+          "id": 1
+        }
+      ],
+      "total": 3,
+      "date": "2023-04-02T11:15:19.382Z",
+      "id": 2
+    },
+    {
+      "cart": [
+        {
+          "name": "Espresso",
+          "cost": 3,
+          "id": 1
+        },
+        {
+          "name": "Cappuccino",
+          "cost": 4,
+          "id": 2
+        }
+      ],
+      "total": 7,
+      "date": "2023-04-02T13:32:29.977Z",
       "id": 3
     }
-  ],
-  "coffeeHistory": []
+  ]
 }

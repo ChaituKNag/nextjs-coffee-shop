@@ -26,18 +26,32 @@ const CoffeeCheckout: FC<CoffeeCheckoutProps> = ({ cartDetails }) => {
         setDeletedEntries([...deletedEntries, id]);
     }
 
+    const handleBuyCoffee = async () => {
+
+        const response = await fetch(`/api/buy-coffee`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        });
+
+        const data = await response.json();
+
+        router.replace(`/order-confirmation/${data.id}`)
+    }
+
     const activeCartItems = cartDetails.filter(cartItem => !deletedEntries.includes(cartItem.id))
     return <div>
         <h2>Coffee checkout</h2>
         {activeCartItems.length > 0 ? <ul>
             {activeCartItems.map((coffee: any) => (
                 <li key={coffee.name}>
-                    {coffee.name} {` `}
+                    {coffee.name} {` `} ${coffee.cost} {`  `}
                     <button onClick={() => handleDeleteFromCart(coffee.id)}>X</button>
                 </li>
             ))}
         </ul> : <p>Cart is empty</p>}
-        <button onClick={() => router.replace('/order-confirmation')} disabled={activeCartItems.length === 0}>Purchase</button>
+        <button onClick={handleBuyCoffee} disabled={activeCartItems.length === 0}>Buy coffee</button>
         <button onClick={() => router.push('/')}>Home</button>
     </div>
 }

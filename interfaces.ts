@@ -15,9 +15,22 @@ export interface CoffeeDetailsProps {
     addedToCart: boolean;
 }
 
-export interface CoffeeCheckoutProps {
-    cartDetails: {
-        name: string;
+export interface CoffeeConfirmationProps {
+    coffeeDetails: {
+        cart: CartDetails;
+        total: number;
+        date: Date;
         id: number
-    }[]
+    };
+}
+
+export interface CartItem {
+    name: string;
+    id: number;
+    cost: number;
+}
+
+export type CartDetails = CartItem[];
+export interface CoffeeCheckoutProps {
+    cartDetails: CartDetails
 }

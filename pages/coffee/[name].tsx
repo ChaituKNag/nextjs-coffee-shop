@@ -17,7 +17,7 @@ const CoffeeDetails: FC<CoffeeDetailsProps> = ({ coffeeDetails, addedToCart }) =
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ name: coffeeDetails.name})
+            body: JSON.stringify({ name: coffeeDetails.name, cost: coffeeDetails.cost })
         });
 
         const data = await response.json();
