@@ -16,12 +16,11 @@ export interface CoffeeDetailsProps {
 }
 
 export interface CoffeeConfirmationProps {
-    coffeeDetails: {
-        cart: CartDetails;
-        total: number;
-        date: Date;
-        id: number
-    };
+    coffeeDetails: CoffeeHistoryItem;
+}
+
+export interface CoffeeOrderHistoryProps {
+    coffeeHistory: CoffeeHistoryItem[];
 }
 
 export interface CartItem {
@@ -33,4 +32,11 @@ export interface CartItem {
 export type CartDetails = CartItem[];
 export interface CoffeeCheckoutProps {
     cartDetails: CartDetails
+}
+
+export interface CoffeeHistoryItem {
+    cart: CartDetails;
+    total: number;
+    date: Date;
+    id: number
 }
